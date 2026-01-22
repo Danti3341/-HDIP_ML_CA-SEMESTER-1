@@ -26,3 +26,14 @@ plt.title("Distribution of Medical Insurance Charges")
 plt.xlabel("Charges")
 plt.ylabel("Frequency")
 plt.show()
+df['bmi_category'] = pd.cut(
+    df['bmi'],
+    bins=[0, 18.5, 25, 30, float("inf")],
+    labels=['underweight', 'normal', 'overweight', 'obese'],
+    right=False
+)
+df['smoker_flag'] = (df['smoker'].str.lower() == 'yes').astype(int)
+df['age_smoker_interaction'] = df['age'] * df['smoker_flag']
+df.head()
+df['NoClaimsBonus_tier'] = df['NoClaimsBonus'].astype(str) + "%"
+df.head()
