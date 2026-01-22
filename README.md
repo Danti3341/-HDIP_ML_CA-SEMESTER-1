@@ -1,2 +1,9 @@
-file_path = "insurance_data.xlsx"
-df = pd.read_excel(file_path)
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from  sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_squared_error
+import numpy as np
+from sklearn.model_selection import KFold, cross_val_score
